@@ -9,6 +9,102 @@ body {
     max-width: 80ch;
 }
 
+/* Header */
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    height: 3rem;
+    margin: 0.5rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    flex: 1 1;
+}
+
+/* Header links */
+
+#nav {
+    align-self: stretch;
+    display: flex;
+    height: 4rem;
+}
+
+.links {
+    display: flex;
+    background: #fff;
+}
+
+.links a {
+    padding: 0 0.5em;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.links a:hover {
+    background: hsla(8, 94%, 52%, 0.1);
+}
+
+.links a:active {
+    background: hsla(8, 94%, 52%, 0.2);
+}
+
+/* Mobile hamburger menu */
+
+.hamburger {
+    display: none;
+}
+
+@media (max-width: 55ch) {
+    #nav {
+        flex-direction: column;
+    }
+
+    .hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 0 4rem;
+    }
+
+    .hamburger svg {
+        height: 1.5rem;
+    }
+
+    .links {
+        z-index: 10;
+        flex-direction: column;
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.4);
+
+        height: 0;
+        overflow: hidden;
+    }
+
+    #nav.open .links {
+        height: auto;
+        overflow: initial;
+    }
+
+    .links a {
+        padding: 1rem 1ch;
+    }
+}
+
+/* Main content */
+
+h2 {
+    border-left: 4px solid hsl(8, 94%, 52%);
+    padding-left: 8px;
+}
+
 a {
     color: hsl(8, 94%, 50%);
 }
@@ -21,44 +117,6 @@ a:active {
     color: hsl(8, 100%, 70%);
 }
 
-header {
-    display: flex;
-    align-items: center;
-}
-
-header img {
-    height: 3rem;
-    margin: 1ch;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 1.5em;
-    font-weight: bold;
-    flex: 1 1;
-}
-
-header a {
-    padding: 0 0.5em;
-    text-decoration: none;
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-}
-
-header a:hover {
-    background: hsla(8, 94%, 52%, 0.1);
-}
-
-header a:active {
-    background: hsla(8, 94%, 52%, 0.2);
-}
-
-h2 {
-    border-left: 4px solid hsl(8, 94%, 52%);
-    padding-left: 8px;
-}
-
 p {
     text-align: justify;
 }
@@ -67,6 +125,8 @@ footer {
     padding: 2em;
     padding-left: 3em;
 }
+
+/* Dark Theme */
 
 @media (prefers-color-scheme: dark) {
     body {
@@ -84,5 +144,13 @@ footer {
 
     a:active {
         color: hsl(8, 94%, 50%);
+    }
+
+    .hamburger {
+        fill: #aaa;
+    }
+
+    .links {
+        background: #232323;
     }
 }
