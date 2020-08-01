@@ -70,8 +70,8 @@ footer {
 
 @media (prefers-color-scheme: dark) {
     body {
-        color: #aaa;
-        background: #151515;
+        color: #bbb;
+        background: #232323;
     }
 
     a {
